@@ -1,0 +1,1403 @@
+/* =========================
+   THEME TOKENS
+   ========================= */
+:root{
+  --bg:#ede8d0;
+  --text:#262b28;
+  --muted:#706b66;
+  --accent:#74858d;
+  --card:#f0ead6;
+  --border:rgba(0,0,0,.12);
+}
+
+body[data-theme="dark"]{
+  --bg:#1f2326;
+  --text:#f3f1ea;
+  --muted:#b8b3a8;
+  --accent:#9bb7c7;
+  --card:#2a2f33;
+  --border:rgba(255,255,255,.16);
+}
+
+/* =========================
+   BASE
+   ========================= */
+html{ scroll-behavior:smooth; }
+html, body{
+  margin:0; padding:0;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  box-sizing:border-box;
+}
+body{ font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
+
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 60px; background:var(--bg);
+  font-family:"Raleway",sans-serif;
+}
+.logo img{ width:40px; height:auto; }
+.nav-links{ list-style:none; display:flex; gap:30px; margin:0; padding:0; }
+.nav-links a{
+  text-decoration:none; color:var(--text); font-weight:500; position:relative;
+  transition:color .3s ease;
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:-4px; width:0; height:1.5px;
+  background:var(--text); transition:width .3s ease;
+}
+.nav-links a:hover{ color:var(--accent); }
+.nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
+.theme-toggle{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; margin-left:12px; background:transparent; color:var(--text);
+  border:1px solid var(--border); border-radius:8px; cursor:pointer;
+  transition:color .2s, border-color .2s, background-color .2s;
+}
+.theme-toggle:hover{ color:var(--accent); border-color:var(--accent); }
+
+/* =========================
+   SECTION 1 — COVER (PHONES + BLOOMS)
+   ========================= */
+.case-cover {
+  background: var(--bg);
+  padding: clamp(80px, 12vh, 160px) clamp(40px, 6vw, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(60px, 10vw, 140px); /* <-- increased spacing between left + right */
+  position: relative;
+  overflow: visible;
+  min-height: 90vh;
+}
+
+/* ===== Left side (text) ===== */
+.cover-left {
+  flex: 0 1 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  color: var(--text);
+  font-size: clamp(60px, 7vw, 100px);
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+
+.cover-dates {
+  font-family: "Manrope", sans-serif;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  margin: 0 0 36px;
+}
+
+.cover-credit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.credit-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.credit-name {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.credit-role {
+  font-family: "Manrope", sans-serif;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Right side (phones) ===== */
+.cover-right {
+  flex: 0 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(10px, 2vw, 16px); /* <-- phones further apart from each other */
+  position: relative;
+  z-index: 1;
+  transform: translateX(-2vw);
+}
+
+/* Smaller phones */
+.phone {
+  width: clamp(100px, 8vw, 160px); /* smaller overall */
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.18));
+  transition: transform 0.25s ease;
+  transform-origin: center bottom;
+}
+
+/* Tilt */
+.phone-left {
+  transform: rotate(-5deg) translateY(8px);
+}
+.phone-right {
+  transform: rotate(5deg) translateY(-8px);
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .case-cover {
+    flex-direction: column;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  .cover-right {
+    transform: none;
+    gap: clamp(24px, 4vw, 40px); /* closer on mobile */
+  }
+
+  .phone {
+    width: clamp(150px, 28vw, 220px); /* slightly larger for smaller screens */
+  }
+}
+
+
+/* =========================
+   SECTION 2 — TABLE OF CONTENTS
+   ========================= */
+.petalpop-toc{
+  background:var(--bg);
+  padding:clamp(16px,2vh,40px) clamp(32px,6vw,96px);
+  min-height:75vh; margin-top:-40px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+}
+.petalpop-toc-left{ max-width:800px; margin-top:-32px; }
+.petalpop-toc-title{
+  font-family:"Raleway",sans-serif; font-weight:800; color:var(--text);
+  line-height:1; letter-spacing:.2px; margin:0 0 32px;
+  font-size:clamp(48px,7vw,96px);
+}
+.petalpop-toc-list{
+  list-style:none; margin:0; padding:0; display:flex; flex-direction:column; align-items:center; gap:12px;
+}
+.petalpop-toc-list a{
+  font-family:"Manrope",sans-serif; font-size:clamp(18px,2vw,26px);
+  color:var(--muted); text-decoration:none; transition:color .3s ease; position:relative;
+}
+.petalpop-toc-list a:hover{ color:var(--text); }
+.petalpop-toc-list a:hover::after{
+  content:""; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:currentColor; opacity:.25;
+}
+@media (max-width:980px){
+  .petalpop-toc{ padding:48px 24px; margin-top:-20px; min-height:auto; }
+  .petalpop-toc-left{ margin-top:-16px; }
+}
+
+/* Smooth anchor + offset for any fixed header */
+section[id]{ scroll-margin-top:80px; }
+
+/* =========================
+   SECTION 3 — PROJECT SUMMARY
+   ========================= */
+.petalpop-summary{
+  background:var(--bg);
+  padding:clamp(40px,10vh,120px) clamp(32px,7vw,120px);
+  display:grid; grid-template-columns:1.05fr .95fr; align-items:center;
+  gap:clamp(24px,5vw,80px); min-height:90vh; margin-top:-20px;
+}
+.petalpop-summary-left{ max-width:760px; }
+.petalpop-summary-title{
+  font-family:"Raleway",sans-serif; font-weight:800; color:var(--text);
+  font-size:clamp(54px,8vw,120px); line-height:.92; letter-spacing:.2px; margin:0 0 24px;
+}
+.petalpop-summary-copy{
+  font-family:"Manrope",sans-serif; font-size:clamp(16px,1.6vw,22px);
+  line-height:1.65; color:var(--muted); margin:0 0 18px;
+}
+.petalpop-summary-right{ justify-self:center; position:relative; }
+.petalpop-summary-phone{
+  width:clamp(220px,26vw,400px); height:auto; display:block;
+  filter:drop-shadow(0 18px 32px rgba(0,0,0,.18)); transition:transform .25s ease;
+}
+.petalpop-summary-right:hover .petalpop-summary-phone{ transform:translateY(-4px); }
+@media (max-width:1020px){
+  .petalpop-summary{
+    grid-template-columns:1fr; min-height:auto; gap:28px;
+    padding:clamp(32px,8vh,80px) clamp(22px,6vw,64px); margin-top:-10px;
+  }
+  .petalpop-summary-left{ max-width:900px; }
+  .petalpop-summary-title{ text-align:left; font-size:clamp(48px,12vw,92px); }
+  .petalpop-summary-right{ justify-self:start; }
+  .petalpop-summary-phone{ width:clamp(280px,70vw,520px); }
+}
+
+/* =========================
+   SECTION 4 — ROLE & RESPONSIBILITY
+   ========================= */
+.petalpop-roles{
+  background:var(--bg);
+  padding:clamp(40px,10vh,120px) clamp(32px,7vw,120px);
+  display:grid; grid-template-columns:1.05fr .95fr; align-items:center;
+  gap:clamp(24px,5vw,80px); min-height:80vh;
+}
+.petalpop-roles-left{ max-width:760px; }
+.petalpop-roles-title{
+  font-family:"Raleway",sans-serif; font-weight:800; color:var(--text);
+  font-size:clamp(54px,8vw,118px); line-height:.92; letter-spacing:.2px; margin:0 0 28px;
+}
+.petalpop-roles-list{
+  list-style:none; margin:0; padding:0; display:grid; gap:14px;
+  font-family:"Manrope",sans-serif; font-size:clamp(16px,1.6vw,22px); color:var(--muted);
+}
+.petalpop-roles-list strong{ color:var(--text); font-weight:700; }
+.petalpop-roles-right{ position:relative; justify-self:center; }
+.petalpop-roles-image{
+  width:clamp(260px,36vw,560px); height:auto; display:block;
+  filter:drop-shadow(0 18px 32px rgba(0,0,0,.18));
+  transform:scaleX(-1); transform-origin:center; /* mirrored */
+}
+@media (max-width:1020px){
+  .petalpop-roles{
+    grid-template-columns:1fr; gap:28px;
+    padding:clamp(32px,8vh,80px) clamp(22px,6vw,64px); min-height:auto;
+  }
+  .petalpop-roles-right{ justify-self:start; }
+  .petalpop-roles-image{ width:clamp(260px,68vw,520px); }
+}
+
+/* =========================
+   SECTION 5 — DEFINE GOALS COVER (FULL-BLEED)
+   ========================= */
+.petalpop-goals-cover{
+  --pp-goals-bg:#008b8b; --pp-goals-text:#fff;
+  background:var(--pp-goals-bg); color:var(--pp-goals-text);
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); width:100vw;
+  min-height:100vh; display:flex; align-items:center; justify-content:flex-start; overflow:hidden;
+}
+.petalpop-goals-content{
+  width:100%; max-width:1600px;
+  padding:clamp(64px,12vh,160px) clamp(40px,10vw,160px); box-sizing:border-box;
+}
+.petalpop-goals-title{
+  font-family:"Raleway",sans-serif; font-weight:800;
+  font-size:clamp(48px,8vw,120px); letter-spacing:.2px; line-height:1; margin:0;
+  padding-left:clamp(40px,6vw,120px);
+}
+@media (max-width:900px){
+  .petalpop-goals-cover{ justify-content:center; text-align:center; }
+  .petalpop-goals-content{ padding:80px 24px; }
+  .petalpop-goals-title{ font-size:clamp(48px,12vw,96px); padding-left:0; }
+}
+
+/* =========================
+   SECTION 6 — GOALS PAGE (CARDS)
+   ========================= */
+.petalpop-goals-page{
+  background:var(--bg);
+  padding:clamp(48px,10vh,120px) clamp(32px,7vw,120px);
+}
+.petalpop-goals-wrap{ max-width:1400px; margin:0 auto; }
+.petalpop-goals-heading{
+  font-family:"Raleway",sans-serif; font-weight:800; color:var(--text);
+  font-size:clamp(44px,8vw,110px); line-height:.95; letter-spacing:.2px;
+  margin:0 0 clamp(28px,5vh,48px);
+}
+.petalpop-goals-grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:clamp(18px,3vw,36px); align-items:stretch;
+}
+.petalpop-goal-card{
+  background:var(--card); color:var(--text); border-radius:22px;
+  padding:clamp(20px,2.6vw,32px); box-shadow:0 10px 24px rgba(0,0,0,.16);
+  display:flex; flex-direction:column; gap:14px; transition:transform .2s, box-shadow .2s;
+}
+.petalpop-goal-card:hover{ transform:translateY(-4px); box-shadow:0 16px 32px rgba(0,0,0,.20); }
+.petalpop-goal-title{
+  font-family:"Manrope",sans-serif; font-weight:800; font-size:clamp(18px,1.6vw,26px);
+  margin:0; line-height:1.2;
+}
+.petalpop-goal-text{
+  font-family:"Manrope",sans-serif; font-size:clamp(15px,1.3vw,20px); line-height:1.55; margin:0; opacity:.95;
+}
+@media (max-width:1100px){ .petalpop-goals-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:720px){
+  .petalpop-goals-page{ padding:48px 24px; }
+  .petalpop-goals-grid{ grid-template-columns:1fr; }
+}
+
+/* =========================
+   SECTION 7 — EMPATHISE COVER (FULL-BLEED)
+   ========================= */
+.petalpop-empathy{
+  --pp-empathy-bg:#008b8b; --pp-empathy-text:#fff;
+  background:var(--pp-empathy-bg); color:var(--pp-empathy-text);
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); width:100vw;
+  min-height:100vh; display:flex; align-items:center; justify-content:flex-start; overflow:hidden;
+}
+.petalpop-goals-inner{
+  width:100%; max-width:1600px;
+  padding:clamp(64px,12vh,160px) clamp(40px,10vw,160px); box-sizing:border-box;
+}
+.petalpop-goals-title{
+  font-family:"Raleway",sans-serif; font-weight:800;
+  font-size:clamp(48px,8vw,120px); letter-spacing:.2px; line-height:1; margin:0;
+  padding-left:clamp(40px,6vw,120px);
+}
+@media (max-width:900px){
+  .petalpop-empathy{ justify-content:center; text-align:center; }
+  .petalpop-goals-inner{ padding:80px 24px; }
+  .petalpop-goals-title{ padding-left:0; font-size:clamp(48px,12vw,96px); }
+}
+
+/* =========================
+   SECTION 8 — USER PAIN POINTS
+   ========================= */
+.petalpop-pain{
+  background:var(--bg); color:var(--text);
+  padding:clamp(48px,10vh,120px) clamp(32px,7vw,120px);
+  display:grid; grid-template-columns:1.15fr .85fr; align-items:center;
+  gap:clamp(24px,5vw,80px);
+}
+.petalpop-pain-left{ max-width:900px; }
+.petalpop-pain-title{
+  font-family:"Raleway",sans-serif; font-weight:800; color:var(--text);
+  font-size:clamp(54px,8vw,120px); line-height:.92; letter-spacing:.2px;
+  margin:0 0 clamp(24px,4vh,36px);
+}
+.petalpop-pain-list{
+  list-style:none; margin:0; padding:0; display:grid;
+  gap:clamp(16px,2.4vh,22px);
+  font-family:"Manrope",sans-serif; font-size:clamp(16px,1.6vw,22px);
+  line-height:1.6; color:var(--muted);
+}
+.petalpop-pain-list .pain-key{ color:var(--text); font-weight:800; }
+.petalpop-pain-right{ position:relative; justify-self:center; }
+.petalpop-pain-image{
+  width:clamp(260px,36vw,560px); height:auto; display:block; object-fit:contain;
+  filter:drop-shadow(0 16px 32px rgba(0,0,0,.18)); transition:transform .25s ease;
+}
+
+@media (max-width:1020px){
+  .petalpop-pain{
+    grid-template-columns:1fr; gap:28px;
+    padding:clamp(32px,8vh,80px) clamp(22px,6vw,64px);
+  }
+  .petalpop-pain-right{ justify-self:start; }
+  .petalpop-pain-image{ width:clamp(280px,70vw,520px); }
+}
+
+
+/* =========================
+   SECTION 9 — USER PERONAS
+   ========================= */
+.petalpop-persona {
+  background: var(--bg);
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(80px, 12vh, 160px) clamp(40px, 8vw, 120px);
+  gap: clamp(60px, 10vh, 120px);
+  text-align: center;
+}
+
+/* Header text */
+.petalpop-persona-header {
+  max-width: 900px;
+  margin-bottom: clamp(40px, 8vh, 80px);
+}
+
+.petalpop-persona-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(54px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: 0.2px;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+.petalpop-persona-subtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(18px, 1.6vw, 24px);
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Persona images side by side */
+.petalpop-persona-one,
+.petalpop-persona-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(60px, 8vw, 160px);
+  flex-wrap: wrap;
+}
+
+/* Image styles */
+.petalpop-persona-image,
+.petalpop-persona-image1 {
+  width: clamp(380px, 40vw, 720px);
+  height: auto;
+  border-radius: 28px;
+  background: var(--card);
+  object-fit: cover;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift */
+.petalpop-persona-image:hover,
+.petalpop-persona-image1:hover {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 32px 72px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive stack */
+@media (max-width: 980px) {
+  .petalpop-persona-one,
+  .petalpop-persona-two {
+    flex-direction: column;
+    gap: clamp(40px, 8vh, 80px);
+  }
+
+  .petalpop-persona-image,
+  .petalpop-persona-image1 {
+    width: clamp(280px, 80vw, 560px);
+  }
+}
+
+/* ============================
+   SECTION 9 — USER JOURNEY MAP
+   ============================ */
+
+.petalpop-journey {
+  background: var(--bg);
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: clamp(80px, 12vh, 160px) clamp(40px, 8vw, 120px);
+  gap: clamp(60px, 8vh, 100px);
+}
+
+/* Header section */
+.petalpop-journey-header {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.petalpop-journey-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(54px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: 0.2px;
+  margin: 0 0 20px;
+  color: var(--text);
+}
+
+.petalpop-journey-subtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Image container */
+.petalpop-journey-image-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Reduced max width for sharper image display */
+.petalpop-journey-image {
+  width: clamp(480px, 70vw, 1100px);
+  height: auto;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift*/
+.petalpop-journey-image:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .petalpop-journey {
+    padding: 80px 24px;
+    gap: clamp(40px, 8vh, 80px);
+  }
+
+  .petalpop-journey-image {
+    width: clamp(260px, 88vw, 720px);
+  }
+}
+
+/* ============================
+   SECTION 11 — Problem Statement
+   ============================ */
+
+  .petalpop-problem {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+
+  min-height: 80vh;
+  padding: clamp(80px, 12vh, 160px) clamp(40px, 8vw, 120px);
+}
+
+.petalpop-problem-inner {
+  max-width: 1200px;
+}
+
+.petalpop-problem-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 4vw, 64px);
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Highlighted phrases (soft blue emphasis) */
+.petalpop-problem-text .highlight {
+  color: #a8ccff; /* pastel blue highlight */
+}
+
+/* Optional bold contrast (for black text bits) */
+.petalpop-problem-text strong {
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .petalpop-problem {
+    text-align: center;
+    padding: 80px 24px;
+  }
+
+  .petalpop-problem-text {
+    font-size: clamp(24px, 6vw, 42px);
+    line-height: 1.4;
+  }
+}
+
+
+/* ============================
+   SECTION 12 — Problem Solution
+   ============================ */
+
+   .petalpop-solution {
+  background: var(--bg);
+  color: var(--text);
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr; 
+  align-items: center;
+  gap: clamp(24px, 5vw, 80px);
+
+  padding: clamp(64px, 12vh, 160px) clamp(40px, 8vw, 120px);
+  min-height: 85vh;
+}
+
+/* Left column */
+.petalpop-solution-left {
+  max-width: 720px;
+}
+
+.petalpop-solution-title {
+  font-family: "Raleway", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(44px, 7vw, 100px);
+  line-height: 1;
+  letter-spacing: 0.2px;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+.petalpop-solution-copy {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Right column (image) */
+.petalpop-solution-right {
+  justify-self: center;
+  position: relative;
+}
+
+.petalpop-solution-image {
+  width: clamp(260px, 34vw, 520px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.18));
+  border-radius: 16px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .petalpop-solution {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 28px;
+    padding: 80px 24px;
+  }
+
+  .petalpop-solution-right {
+    justify-self: center;
+  }
+
+  .petalpop-solution-image {
+    width: clamp(280px, 80vw, 520px);
+  }
+}
+
+
+/* ============================
+   SECTION 12 — Paper Wireframes
+   ============================ */
+
+.petalpop-wireframes {
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(60px, 10vh, 140px) clamp(40px, 8vw, 120px);
+  display: grid;
+  grid-template-columns: 1.05fr 1.2fr; /* left = text, right = wireframes */
+  gap: clamp(28px, 5vw, 80px);
+  align-items: center;
+}
+
+/* Left text area */
+.petalpop-wireframes-left {
+  max-width: 760px;
+}
+
+.petalpop-wireframes-title {
+  font-family: "Raleway", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(54px, 8vw, 120px);
+  line-height: 0.92;
+  letter-spacing: 0.2px;
+  margin: 0 0 18px;
+}
+
+.petalpop-wireframes-copy {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: clamp(16px, 1.6vw, 22px);
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Right wireframe row */
+.petalpop-wireframes-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(16px, 2vw, 32px);
+  flex-wrap: wrap; /* so it stays neat on smaller screens */
+}
+
+.petalpop-wire-img {
+  width: clamp(160px, 15vw, 240px);
+  height: auto;
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .petalpop-wireframes {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .petalpop-wireframes-right {
+    justify-content: center;
+  }
+
+  .petalpop-wire-img {
+    width: clamp(180px, 40vw, 280px);
+  }
+}
+
+
+
+/* =========================
+   DIGITAL WIREFRAMES SECTION
+   ========================= */
+.dw {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 8vw, 100px);
+  padding: clamp(60px, 10vw, 120px) clamp(40px, 8vw, 100px);
+  max-width: 1300px;
+  margin: 0 auto;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.dw-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dw-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-size: clamp(48px, 6.5vw, 96px);
+  margin: 0;
+  color: var(--text);
+}
+
+.dw-copy {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* ===== Right column ===== */
+.dw-right {
+  display: flex;
+  justify-content: center;
+}
+
+.phone {
+  position: relative;
+  width: clamp(260px, 32vw, 400px);
+  aspect-ratio: 9 / 19.5;
+}
+
+.phone-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  background: #ddd;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  display: block;
+}
+
+/* ===== Arrow callouts ===== */
+.anno {
+  --bridge: 100px; /* arrow length (override per callout) */
+  position: absolute;
+  left: calc(100% + 80px); /* <-- pushed OUTWARD more */
+  display: inline-flex;
+  align-items: center;
+  max-width: min(48ch, 400px);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(14px, 1.8vw, 16px);
+  line-height: 1.35;
+  color: var(--text);
+}
+
+/* Arrow line */
+.anno::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--bridge);
+  height: 2px;
+  background: var(--text);
+  opacity: 0.6;
+}
+
+/* Connector dot */
+.anno::after {
+  content: "";
+  position: absolute;
+  right: calc(100% + var(--bridge));
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text);
+  opacity: 0.85;
+}
+
+/* Plain text */
+.anno-text {
+  display: inline;
+}
+
+/* Positioning of callouts */
+.anno-top {
+  top: 14%;
+}
+.anno-mid {
+  top: 56%;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 980px) {
+  .dw {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .dw-right {
+    justify-content: flex-start;
+  }
+
+  .phone {
+    width: clamp(260px, 65vw, 420px);
+  }
+
+  .anno {
+    left: calc(100% + 40px); /* slightly closer on smaller screens */
+  }
+}
+
+@media (max-width: 640px) {
+  .anno {
+    position: static;
+    margin: 10px 0 0 0;
+  }
+  .anno::before,
+  .anno::after {
+    display: none;
+  }
+  .phone {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.wireframes {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(80px, 10vh, 140px);
+  background: var(--bg);
+  padding: clamp(60px, 8vw, 120px);
+  color: var(--text);
+}
+
+
+/* =========================
+   USABILITY TESTING SECTION
+   ========================= */
+
+   .ut{
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(60px, 10vw, 120px) clamp(40px, 8vw, 100px);
+}
+.ut-head{ max-width: 1100px; margin: 0 auto clamp(24px,4vw,36px); }
+.ut-title{
+  font-family: "Raleway", sans-serif; font-weight: 800; letter-spacing: -0.02em;
+  line-height: 1.05; font-size: clamp(42px, 7vw, 96px); margin: 0 0 12px;
+}
+.ut-intro{ font-family: "Manrope", sans-serif; color: var(--muted); font-size: clamp(16px,2vw,20px); margin: 0; }
+
+.ut-row{ max-width: 1200px; margin: clamp(28px,4vw,44px) auto 0; }
+.ut-row + .ut-row{ margin-top: clamp(40px,6vw,72px); }
+
+.ut-rowhead{ display: flex; align-items: center; gap: 12px; margin-bottom: clamp(14px,2vw,18px); }
+.ut-badge{
+  display:inline-block; font-family:"Manrope",sans-serif; font-weight:700; font-size:12px;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--text);
+  background: var(--card); border:1px solid var(--border);
+  padding:6px 10px; border-radius:999px;
+}
+.ut-h3{ margin:0; font-family:"Raleway",sans-serif; font-weight:800; font-size: clamp(18px,2.4vw,24px); }
+
+.ut-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+}
+.ut-card{
+  background:#222; color:#f1f1f1; border-radius:22px;
+  padding: clamp(18px, 2.2vw, 26px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.04);
+  font-family:"Manrope",sans-serif; font-size:clamp(15px,1.8vw,18px); line-height:1.55;
+}
+
+/* Responsive */
+@media (max-width: 1000px){ .ut-grid{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px){ .ut-grid{ grid-template-columns: 1fr; } }
+
+
+/* =========================
+   MOCKUPS SECTION
+   ========================= */
+.mockups {
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(80px, 12vh, 160px) clamp(40px, 8vw, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 8vw, 100px);
+  flex-wrap: wrap;
+}
+
+.mockups-left {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+}
+
+.mockups-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 100px);
+  margin-bottom: 16px;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.mockups-copy {
+  font-family: "Manrope", sans-serif;
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Right side with mockup images */
+.mockups-right {
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mockup-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 6vw, 80px);
+  position: relative;
+}
+
+.mockup-img {
+  width: clamp(160px, 20vw, 260px);
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  background: #ddd;
+  transition: transform 0.25s ease;
+}
+
+
+
+/* Green connecting arrow */
+.arrow {
+  width: clamp(40px, 6vw, 80px);
+  height: 2px;
+  background: #46b36a;
+  position: relative;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #46b36a;
+  border-right: 2px solid #46b36a;
+}
+
+/* Responsive layout */
+@media (max-width: 880px) {
+  .mockups {
+    flex-direction: column;
+    gap: 60px;
+    text-align: left;
+  }
+
+  .mockup-pair {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .arrow {
+    width: 2px;
+    height: 40px;
+  }
+
+  .arrow::after {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(135deg);
+  }
+}
+
+.refine {
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(80px, 12vh, 160px) clamp(40px, 8vw, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 8vw, 100px);
+  flex-wrap: wrap;
+}
+
+.refine-left {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+}
+
+.refine-copy {
+  font-family: "Manrope", sans-serif;
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Right side with two mockups */
+.refine-right {
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refine-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 6vw, 80px);
+  position: relative;
+}
+
+.refine-img {
+  width: clamp(160px, 20vw, 260px);
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  background: #ddd;
+  transition: transform 0.25s ease;
+}
+
+
+/* Connecting arrow (green) */
+.arrow {
+  width: clamp(40px, 6vw, 80px);
+  height: 2px;
+  background: #46b36a;
+  position: relative;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #46b36a;
+  border-right: 2px solid #46b36a;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .refine {
+    flex-direction: column;
+    gap: 60px;
+    text-align: left;
+  }
+
+  .refine-pair {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .arrow {
+    width: 2px;
+    height: 40px;
+  }
+
+  .arrow::after {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(135deg);
+  }
+}
+
+.final-showcase {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(60px, 10vh, 140px) clamp(40px, 8vw, 100px);
+}
+
+.showcase-img {
+  width: min(100%, 1200px);
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* =========================
+   ACCESSIBILITY CONSIDERATIONS
+   ========================= */
+.accessibility {
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(100px, 14vh, 180px) clamp(40px, 8vw, 120px);
+  text-align: left;
+}
+
+.accessibility-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: 1.05;
+  margin-bottom: clamp(40px, 6vh, 60px);
+  color: var(--text);
+}
+
+.accessibility-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3vw, 40px);
+  justify-content: flex-start;
+}
+
+.accessibility-card {
+  background: #3f3c35; /* Dark contrast for readability */
+  color: #fff;
+  border-radius: 20px;
+  flex: 1 1 280px;
+  padding: clamp(24px, 3vw, 40px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.accessibility-card h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.accessibility-card p {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: #e8e8e8;
+  line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 880px) {
+  .accessibility-grid {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   PROTOTYPE GIF SECTION
+   ========================= */
+.prototype-gif {
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(100px, 14vh, 160px) clamp(40px, 8vw, 100px);
+  text-align: center;
+}
+
+.prototype-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 1.05;
+  margin-bottom: 60px;
+  color: var(--text);
+}
+
+.gif-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prototype-img {
+  width: clamp(160px, 20vw, 260px); /* same sizing as your other mockups */
+  height: auto;
+  border-radius: 20px;
+  background: #ddd;
+}
+
+/* =========================
+   PROTOTYPE LINK BUTTON
+   ========================= */
+.prototype-link {
+  background: var(--bg);
+  text-align: center;
+  padding: 100px 0;
+}
+
+.prototype-btn {
+  display: inline-block;
+  background: #ff8c94; /* PetalPop pinkish CTA tone */
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 14px 38px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+  margin-top: 60px;
+}
+
+.prototype-btn:hover {
+  background: #e06c76; /* slightly darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* =========================
+   GOING FORWARD / REFLECTION SECTION
+   ========================= */
+.reflection {
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(100px, 14vh, 180px) clamp(40px, 8vw, 120px);
+  font-family: "Manrope", sans-serif;
+  line-height: 1.7;
+  position: relative;
+}
+
+.reflection-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 100px);
+  margin-bottom: clamp(60px, 8vh, 100px);
+}
+
+.reflection-section {
+  margin-bottom: clamp(60px, 8vh, 100px);
+  max-width: 900px;
+}
+
+.reflection-section h3,
+.reflection-subtitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3vw, 36px);
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.reflection-subtitle {
+  font-size: clamp(38px, 5vw, 60px);
+  margin-top: 80px;
+}
+
+.reflection-section h4 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: var(--accent);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.reflection-section p {
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 19px);
+  margin-bottom: 14px;
+}
+
+.user-quote {
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 20px;
+  margin: 20px 0;
+  max-width: 700px;
+}
+
+/* =========================
+   SCROLL TO TOP BUTTON
+   ========================= */
+.scroll-top {
+  position: sticky;
+  bottom: 40px;
+  left: 100%;
+  transform: translateX(-120%);
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s ease;
+}
+
+.scroll-top:hover {
+  background: #5d6e76; /* slightly darker accent */
+}

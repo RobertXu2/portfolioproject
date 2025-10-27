@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petal Pop — Case Study</title>
+
+ 
+  <link rel="stylesheet" href="Petalpop.css" />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="icon" type="image/png" href="images/favicon-padded-256.png">
+</head>
+<body>
+    <!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/favicon-padded-256.png" alt="Robert Xu Logo">
+    
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">work</a></li>
+    <li><a href="about.html">about</a></li>
+    <li><a href="contact.html">contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Toggle colour theme">
+  <i class="fa-solid fa-moon"></i>
+</button>
+
+</nav>
+
+<!-- ===== Petal Pop Cover ===== -->
+<section class="case-cover" id="petal-pop-cover">
+  <div class="cover-left">
+    <h1 class="cover-title">Petal Pop</h1>
+    <p class="cover-dates">September 2025 — October 2025</p>
+
+    <div class="cover-credit">
+      <img class="credit-avatar" src="images/Myphoto.jpg" alt="Robert Xu">
+      <div class="credit-text">
+        <div class="credit-name">Presented by Robert Xu</div>
+        <div class="credit-role">Project for Google UX Certificate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-right">
+    <img class="phone phone-left" src="PetalPopImages/Rectangle (1).png" alt="Petal Pop login screen mockup">
+    <img class="phone phone-right" src="PetalPopImages/Rectangle.png" alt="Petal Pop custom request mockup">
+  </div>
+
+  </div>
+</section>
+
+
+ <!-- ===== PetalPop Table of Contents ===== -->
+<section class="petalpop-toc">
+  <div class="petalpop-toc-left">
+    <h1 class="petalpop-toc-title">Table of<br>Contents</h1>
+
+    <ul class="petalpop-toc-list">
+      <li><a href="#petalpop-goals-cover">Define Goals</a></li>
+      <li><a href="#petalpop-empathy">Empathise With User</a></li>
+      <li><a href="#petalpop-problem">Creating Problem Statement</a></li>
+      <li><a href="#petalpop-start-design">Starting the Design</a></li>
+      <li><a href="#petalpop-redefine">Redefining the Design</a></li>
+      <li><a href="#petalpop-prototype">Prototype</a></li>
+      <li><a href="#petalpop-forward">Going Forwards</a></li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ===== PetalPop Project Summary ===== -->
+
+
+<section id="petalpop-section-3" class="petalpop-summary">
+  <div class="petalpop-summary-left">
+    <h2 class="petalpop-summary-title">
+      <span>Project</span><br><span>Summary</span>
+    </h2>
+
+    <p class="petalpop-summary-copy">
+      Petal Pop is a modern flower shopping and arrangement app that reimagines how users
+      discover, design, and purchase floral creations. Built with a soft gradient UI,
+      intuitive flow, and elegant aesthetics, Petal Pop combines the artistry of floristry
+      with the simplicity of digital shopping.
+    </p>
+
+    <p class="petalpop-summary-copy">
+      The app allows users to browse curated collections and design their own bouquet,
+      with seamless checkout and delivery tracking. PetalPop’s interface emphasizes
+      visual appeal and emotional connection, helping users express love, celebration,
+      or gratitude through flowers that reflect their style.
+    </p>
+  </div>
+
+  <div class="petalpop-summary-right">
+    <img
+      src="PetalPopImages/ProjectSummaryImage.png"
+      alt="Petal Pop home screen mockup"
+      class="petalpop-summary-phone"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+<!-- ===== PetalPop Roles and Responsiblites ===== -->
+<section id="petalpop-section-4" class="petalpop-roles">
+  <div class="petalpop-roles-left">
+    <h2 class="petalpop-roles-title">
+      <span>Role and</span><br />
+      <span>Responsibility</span>
+    </h2>
+
+
+    <ul class="petalpop-roles-list">
+      <li><strong>Role:</strong> Product Designer</li>
+      <li><strong>Company:</strong> Petal Pop</li>
+      <li><strong>Website:</strong> Appstore</li>
+      <li><strong>Year:</strong> 2025</li>
+    </ul>
+  </div>
+
+  <div class="petalpop-roles-right">
+    <!-- Replace src with your image path -->
+    <img
+      src="PetalPopImages/RolesandResponsibiliesImage.png"
+      alt="PetalPop decorative image"
+      class="petalpop-roles-image"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+<!-- ===== PetalPop Goals Cover ===== -->
+<section id="petalpop-goals-cover" class="petalpop-goals-cover">
+  <div class="petalpop-goals-inner">
+    <h1 class="petalpop-goals-title">Define Goals</h1>
+  </div>
+</section>
+
+<!-- ===== PetalPop Goals Page ===== -->
+<section id="petalpop-goals-page" class="petalpop-goals-page">
+  <div class="petalpop-goals-wrap">
+    <h2 class="petalpop-goals-heading">Goals</h2>
+
+    <div class="petalpop-goals-grid">
+      <!-- Card 1 -->
+      <article class="petalpop-goal-card">
+        <h3 class="petalpop-goal-title">Goal 1</h3>
+        <p class="petalpop-goal-text">
+          Simplify the flower shopping experience through an intuitive
+          and effortless app design.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="petalpop-goal-card">
+        <h3 class="petalpop-goal-title">Goal 2</h3>
+        <p class="petalpop-goal-text">
+          Empower users to express emotion and creativity through
+          custom floral arrangements.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="petalpop-goal-card">
+        <h3 class="petalpop-goal-title">Goal 3</h3>
+        <p class="petalpop-goal-text">
+          Deliver a visually delightful and emotionally engaging
+          checkout experience.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Empathise With User ===== -->
+<section id="petalpop-empathy" class="petalpop-empathy">
+  <div class="petalpop-goals-inner">
+    <h1 class="petalpop-goals-title">Empathise With User</h1>
+  </div>
+</section>
+
+
+
+<!-- ===== PetalPop User Pain Points ===== -->
+<section id="petalpop-pain" class="petalpop-pain">
+  <div class="petalpop-pain-left">
+    <h2 class="petalpop-pain-title">User Pain<br>Points</h2>
+
+    <ul class="petalpop-pain-list">
+      <li>
+        <strong class="pain-key">Time</strong> – Working adults struggle to find the time
+        to visit multiple local flower shops to get a consultation on a custom arrangement.
+      </li>
+      <li>
+        <strong class="pain-key">Complexity</strong> – Many flower websites and apps are too
+        cluttered and confusing, making it difficult to navigate—especially for elder individuals.
+      </li>
+      <li>
+        <strong class="pain-key">Preview</strong> – Shoppers want to preview their bouquet before buying.
+      </li>
+      <li>
+        <strong class="pain-key">Cost Transparency</strong> – Hidden fees for extras make it hard
+        to know the final price, leading to frustration and reducing trust in the buying process.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Right: your illustration/image -->
+  <div class="petalpop-pain-right">
+    <!-- Replace src with your file; transparent PNG/SVG recommended -->
+    <img
+      src="PetalPopImages/PainPointsImage.png"
+      alt="Frustrated users while shopping for flowers"
+      class="petalpop-pain-image"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+
+<!-- ===== PetalPop User Personas ===== -->
+<section id="petalpop-persona" class="petalpop-persona">
+
+  <div class="petalpop-persona-header">
+    <h2 class="petalpop-persona-title">User Personas</h2>
+  </div>
+<div class="petalpop-persona-one">
+    <img
+      src="PetalPopImages/EmmaPetalPop.png"
+      alt="Emma Liu - User Persona"
+      class="petalpop-persona-image"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <div class="petalpop-persona-two">
+    <img
+      src="PetalPopImages/DanielPetalPop.png"
+      alt="Emma Liu - User Persona"
+      class="petalpop-persona-image1"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+</section>
+
+<!-- ===== PetalPop User Journey Map ===== -->
+<section id="petalpop-journey" class="petalpop-journey">
+  <div class="petalpop-journey-header">
+    <h2 class="petalpop-journey-title">User Journey Map</h2>
+    <p class="petalpop-journey-subtitle">
+      Visualizing the emotional and functional flow of a user’s experience with Petal Pop —
+      from discovering flowers to completing their purchase.
+    </p>
+  </div>
+
+  <div class="petalpop-journey-image-wrap">
+    <img
+      src="PetalPopImages/UserJourneyMapPetalPop.png"
+      alt="User journey map showing stages, emotions, and opportunities"
+      class="petalpop-journey-image"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+<!-- ===== Empathise With User ===== -->
+<section id="petalpop-problem" class="petalpop-empathy">
+  <div class="petalpop-goals-inner">
+    <h1 class="petalpop-goals-title">Creating the Problem Statement</h1>
+  </div>
+</section>
+
+<!-- ===== PetalPop Problem Statement ===== -->
+<section id="petalpop-problem" class="petalpop-problem">
+  <div class="petalpop-problem-inner">
+    <p class="petalpop-problem-text">
+      <span class="highlight">Many users struggle</span> to find personalisd
+      meaningful floral gifts due to <span class="highlight">confusing interfaces</span>
+      and limited <span class="highlight">creative options.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===== PetalPop Solution ===== -->
+<section id="petalpop-solution" class="petalpop-solution">
+  <div class="petalpop-solution-inner">
+    <h2 class="petalpop-solution-title">Solution</h2>
+    <p class="petalpop-solution-copy">
+      Petal Pop is a modern user friendly shopping app designed to make buying flowers fast, simple,
+      and enjoyable. The app allows users to browse a beautiful range of bouquets, save their
+      favorites, and order them instantly, all with a few taps. Alternatively users are also able
+      to customise their very own flower bouquet and arrangements.
+    </p>
+  </div>
+
+   <div class="petalpop-solution-right">
+    <img
+      src="PetalPopImages/SolutionImage.png"
+      alt="Petal Pop app screens showcasing the solution"
+      class="petalpop-solution-image"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+
+<!-- ===== Starting the Design ===== -->
+<section id="petalpop-start-design" class="petalpop-empathy">
+  <div class="petalpop-goals-inner">
+    <h1 class="petalpop-goals-title">Starting the Design</h1>
+  </div>
+</section>
+
+<!-- ===== PetalPop Paper Wireframes ===== -->
+<section id="petalpop-wireframes" class="petalpop-wireframes">
+  <div class="petalpop-wireframes-left">
+    <h2 class="petalpop-wireframes-title">Paper<br>Wireframes</h2>
+    <p class="petalpop-wireframes-copy">
+      Drawing the paper wireframes for the app, I prioritised which functions would provide
+      the most value to users. For the home screen, I explored multiple layouts to offer
+      different ways to browse and shop quickly.
+    </p>
+  </div>
+
+  <!-- Right: grid of scans/photos (replace src paths with yours) -->
+  <div class="petalpop-wireframes-right">
+    <img src="PetalPopImages/image 4.png" alt="Wireframe A" class="petalpop-wire-img">
+    <img src="PetalPopImages/image 5.png" alt="Wireframe B" class="petalpop-wire-img">
+    <img src="PetalPopImages/image 6.png" alt="Wireframe C" class="petalpop-wire-img">
+    <img src="PetalPopImages/image 7.png" alt="Wireframe D" class="petalpop-wire-img">
+    <img src="PetalPopImages/image 8.png" alt="Wireframe E" class="petalpop-wire-img wide">
+    <img src="PetalPopImages/image 9.png" alt="Wireframe F" class="petalpop-wire-img">
+  </div>
+</section>
+
+<!-- ===== PetalPop Digital Wireframes 1 ===== -->
+<section class="dw" aria-labelledby="dw-title">
+  <div class="dw-left">
+    <h1 class="dw-title" id="dw-title">Digital<br>Wireframes</h1>
+    <p class="dw-copy">
+      I overall decided to keep the searchbar as a standalone element. I placed buttons for the main navigation
+      for easy shopping.
+    </p>
+  </div>
+
+  <div class="dw-right">
+    <figure class="phone" role="group" aria-label="Wireframe with callouts">
+      <img class="phone-img" src="PetalPopImages/DigitalWireframe1.png"
+           alt="PetalPop digital wireframe phone mockup" />
+
+      <!-- Callout 1 -->
+      <figcaption class="anno anno-top" style="--bridge: 120px;">
+        <span class="anno-text">
+          Variety of elements on home page for fun easy shopping
+        </span>
+      </figcaption>
+
+      <!-- Callout 2 -->
+      <figcaption class="anno anno-mid" style="--bridge: 130px;">
+        <span class="anno-text">
+          Banner allows user to discover sales and seasonal items
+        </span>
+      </figcaption>
+    </figure>
+  </div>
+
+ 
+</section>
+
+
+<!-- ===== PetalPop Usability Testing (Rounds 1 & 2) ===== -->
+<section class="ut all" aria-labelledby="ut-title">
+  <div class="ut-head">
+    <h2 class="ut-title" id="ut-title">Testing results</h2>
+    <p class="ut-intro">
+      I conducted two rounds of usability studies. Below are the key findings.
+    </p>
+  </div>
+
+  <!-- Round 1 -->
+  <div class="ut-row">
+    <div class="ut-rowhead">
+      <span class="ut-badge">Round 1</span>
+      <h3 class="ut-h3">Core issues found</h3>
+    </div>
+    <div class="ut-grid">
+      <article class="ut-card">
+        <p>Users were unsure how much the “Rotate” and “Zoom” button rotated or zoomed in for.</p>
+      </article>
+      <article class="ut-card">
+        <p>Users reported there was no account feature so they could not save their ‘favourites’.</p>
+      </article>
+      <article class="ut-card">
+        <p>Users wanted to order flowers quickly.</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Round 2 -->
+  <div class="ut-row">
+    <div class="ut-rowhead">
+      <span class="ut-badge">Round 2</span>
+      <h3 class="ut-h3">What to include/remove for the hi-fi prototype</h3>
+    </div>
+    <div class="ut-grid">
+      <article class="ut-card">
+        <p>Having a favourites button directly next to the product rather than having to click into the product.</p>
+      </article>
+      <article class="ut-card">
+        <p>Options to create custom arrangements rather than just picking preselected ones.</p>
+      </article>
+      <article class="ut-card">
+        <p>Banners and buttons should have a clear difference.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Refining the Design ===== -->
+<section id="petalpop-redefine" class="petalpop-empathy">
+  <div class="petalpop-goals-inner">
+    <h1 class="petalpop-goals-title">Refining the Design</h1>
+  </div>
+</section>
+
+<script src="script.js"></script>
+<script src="flowerbloom.js"></script>
+
+
+<!-- ===== PetalPop Mockups Section ===== -->
+<section class="mockups" aria-labelledby="mockups-title">
+  <div class="mockups-left">
+    <h2 class="mockups-title" id="mockups-title">Mockups</h2>
+    <p class="mockups-copy">
+      Customers wanted to order fast, so I added a ‘Shop Now’ button combined with a Hero Image. 
+      After the usability studies I added vibrant colours, an account feature and an instant save feature. 
+      I am thinking about adding drop shadows to make the images less flat.
+    </p>
+  </div>
+
+  <div class="mockups-right">
+    <div class="mockup-pair">
+      <img src="PetalPopImages/refiningthedesign1.png" alt="Wireframe mockup" class="mockup-img">
+      <div class="arrow"></div>
+      <img src="PetalPopImages/refiningthedesign2.png" alt="Final mockup" class="mockup-img">
+    </div>
+  </div>
+</section>
+<section class="refine" aria-labelledby="refine2-title">
+  <div class="refine-left">
+    <p class="refine-copy">
+      From the usability study the rotate and zoom button were unclear to use. 
+      Pinch to zoom is also an option I could have used. 
+      I also added a customise button to add/change arrangements. 
+      In future designs I may want to add what the arrangement includes 
+      to give users a more transparent purchase.
+    </p>
+  </div>
+
+  <div class="refine-right">
+    <div class="refine-pair">
+      <img src="PetalPopImages/refiningthedesign3.png" 
+           alt="Before usability changes mockup" 
+           class="refine-img">
+
+      <div class="arrow"></div>
+
+      <img src="PetalPopImages/refiningthedesign4.png" 
+           alt="After usability improvements mockup" 
+           class="refine-img">
+    </div>
+  </div>
+</section>
+
+<!-- ===== Refining the Design Final Section ===== -->
+<section class="final-showcase">
+  <img 
+    src="PetalPopImages/refiningthedesign5.png" 
+    alt="Final PetalPop app mockups showing key user flows" 
+    class="showcase-img">
+</section>
+
+<!-- ===== PetalPop Accessibility Considerations ===== -->
+<section class="accessibility" aria-labelledby="accessibility-title">
+  <h2 class="accessibility-title" id="accessibility-title">Accessibility Considerations</h2>
+
+  <div class="accessibility-grid">
+    <div class="accessibility-card">
+      <h3>Consideration 1</h3>
+      <p>Illustrations and icons to help users better understand designs.</p>
+    </div>
+
+    <div class="accessibility-card">
+      <h3>Consideration 2</h3>
+      <p>Followed color contrast accessibility standards for buttons and written content.</p>
+    </div>
+
+    <div class="accessibility-card">
+      <h3>Consideration 3</h3>
+      <p>Interactive elements such as buttons, cards, and icons are designed with adequate spacing and minimum touch sizes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Final Prototype ===== -->
+<section id="petalpop-prototype" class="petalpop-empathy">
+  <div class="petalpop-goals-inner">
+    <h1 class="petalpop-goals-title">Prototype</h1>
+  </div>
+</section>
+
+<!-- ===== PetalPop Prototype Interaction (GIF Section) ===== -->
+<section class="prototype-gif" aria-labelledby="prototype-title">
+  <h2 class="prototype-title" id="prototype-title">Prototype Interaction</h2>
+
+  <div class="gif-wrapper">
+    <img src="PetalPopImages/gif67.gif" alt="PetalPop interactive prototype demonstration" class="prototype-img">
+  </div>
+
+  <div class="prototype-gif-button">
+  <a href="https://www.figma.com/proto/JTY8bBI6egdNYTdDY4Kpyl/Figma-Florist-App-Prototype?node-id=0-1&t=vGrLL9pRGHpJg7xi-1"
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="prototype-btn">
+    View Interactive Prototype
+  </a>
+</div>
+
+</section>
+
+<!-- ===== Going Forward ===== -->
+<section id="petalpop-forward" class="petalpop-empathy">
+  <div class="petalpop-goals-inner">
+    <h1 class="petalpop-goals-title">Going Forwards</h1>
+  </div>
+</section>
+
+<!-- ===== Going Forwards ===== -->
+<section class="reflection">
+  <h2 class="reflection-title">Going Forward</h2>
+
+  <div class="reflection-section">
+    <h3>Impact</h3>
+    <p>
+      The Petal Pop app empowers users to feel confident buying flowers online with complete transparency.
+    </p>
+  </div>
+
+  <div class="reflection-section">
+    <h3>What I Learned</h3>
+    <p>
+      I learnt that design comes from continuous user research and figuring out pieces of the puzzles. 
+      Each iteration revealed new ways users interacted with the app. 
+      It taught me that user research is not a one-time step but an ongoing conversation.
+    </p>
+  </div>
+
+  <div class="reflection-section">
+    <h3>User Feedback Quote</h3>
+    <blockquote class="user-quote">
+      “Being able to save my favorite bouquets is such a nice touch. It makes future shopping way faster.”
+    </blockquote>
+  </div>
+
+  <!-- Updated main heading -->
+  <div class="reflection-section">
+    <h2 class="reflection-subtitle">What I Would Do Next Time</h2>
+
+    <h4>Design With Accessibility From the Start</h4>
+    <p>
+      I have to make sure to obey WCAG standards! I realised designing with accessibility in mind 
+      should be built into every design decision I make and not just added after testing around.
+    </p>
+
+    <h4>Explore More Design Options</h4>
+    <p>
+      If I could redo this project I would want to prototype more design reiterations — exploring a wider range 
+      of colour palettes, typography, layout, better use of whitespace, drop shadows, and different interaction methods 
+      such as a dropdown or navigation bar. This would allow me to uncover more innovative and visually appealing design solutions.
+    </p>
+
+    <h4>Think Beyond the Interface</h4>
+    <p>
+      While I focused a lot on Petal Pop's look and functionality, next time I would pay more attention 
+      to the emotional experience. Asking questions like “How would the user feel about this design?” 
+      helps create a memorable experience rather than just clicking buttons on a screen.
+    </p>
+
+    <h4>Conduct More Research</h4>
+    <p>
+      I think my biggest mistake when creating this project was not going in-depth enough in user research. 
+      I could have conducted more research on competitors, trends, and users, which would have led to more 
+      confidence in the original wireframes. Furthermore, I primarily relied on secondary sources such as local 
+      flower sites and online articles. I needed to focus more on primary sources like field studies, user interviews, 
+      surveys, and questionnaires to better understand how people buy and choose flowers in real life.
+    </p>
+  </div>
+
+  <!-- Sticky scroll-to-top button -->
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+</section>
+</body>
+</html>

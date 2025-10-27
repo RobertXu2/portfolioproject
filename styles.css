@@ -1,0 +1,309 @@
+/* ===== Theme tokens ===== */
+:root{
+  --bg:#ede8d0;
+  --text:#262b28;
+  --muted:#706b66;
+  --accent:#74858d;
+  --card:#f0ead6;
+  --border:rgba(0,0,0,.12);
+}
+
+body[data-theme="dark"]{
+  --bg:#1f2326;
+  --text:#f3f1ea;
+  --muted:#b8b3a8;
+  --accent:#9bb7c7;
+  --card:#2a2f33;
+  --border:rgba(255,255,255,.16);
+}
+
+/* ===== Base===== */
+html{ scroll-behavior:smooth; }
+body{
+  font-family:"Manrope",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ===== Navbar ===== */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:var(--bg);
+  font-family:"Raleway",sans-serif;
+}
+.logo img{ width:40px; height:auto; }
+.nav-links{ list-style:none; display:flex; gap:30px; margin:0; padding:0; }
+.nav-links a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  position:relative;
+  transition:color .3s ease;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:-4px;
+  width:0%; height:1.5px;
+  background:var(--text);
+  transition:width .3s ease;
+}
+.nav-links a:hover{ color:var(--accent); }
+.nav-links a:hover::after,
+.nav-links a.active::after{ width:100%; }
+
+/* Theme toggle */
+.theme-toggle{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; margin-left:12px;
+  background:transparent; color:var(--text);
+  border:1px solid var(--border); border-radius:8px; cursor:pointer;
+  transition:color .2s, border-color .2s, background-color .2s;
+}
+.theme-toggle:hover{ color:var(--accent); border-color:var(--accent); }
+
+/* ===== Hero ===== */
+.intro-hero{
+  background:var(--bg);
+  padding:clamp(56px,6vw,100px) 24px;
+  display:flex; align-items:center; justify-content:center;
+}
+.intro-wrap{
+  max-width:1000px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:30px; flex-wrap:wrap;
+}
+.intro-text{ flex:1 1 450px; text-align:left; }
+.intro-greet{
+  font-family:"Manrope",sans-serif;
+  color:var(--muted);
+  font-size:clamp(14px,1.4vw,18px);
+  margin:0 0 8px 0;
+}
+.intro-title{
+  font-family:"Raleway",sans-serif;
+  color:var(--text);
+  margin:0 0 12px 0;
+  font-weight:800;
+  line-height:1.05;
+  font-size:clamp(36px,8vw,80px);
+}
+.intro-title .dot{ color:var(--accent); margin-left:4px; }
+
+/* Interactive name */
+.name{ display:inline-flex; gap:1px; cursor:default; }
+.name span{
+  display:inline-block;
+  transition:color .3s ease, transform .3s ease;
+  color:var(--text);
+}
+.name span:nth-child(1):hover{ color:#ff0000; }
+.name span:nth-child(2):hover{ color:#ff7f00; }
+.name span:nth-child(3):hover{ color:#ffff00; }
+.name span:nth-child(4):hover{ color:#00ff00; }
+.name span:nth-child(5):hover{ color:#0000ff; }
+.name span:nth-child(6):hover{ color:#4b0082; }
+.name span:nth-child(7):hover{ color:#8b00ff; }
+.name span:nth-child(8):hover{ color:#ff1493; }
+.name span:nth-child(9):hover{ color:#00ced1; }
+.name span:hover{ transform:translateY(-6px); }
+
+/* Subtitle + highlight */
+.intro-sub{
+  font-family:"Manrope",sans-serif;
+  color:var(--muted);
+  font-size:clamp(16px,2.1vw,22px);
+  line-height:1.6;
+  max-width:52ch; margin:0;
+}
+.hl{
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  padding:2px 4px; border-radius:4px;
+  box-decoration-break:clone; -webkit-box-decoration-break:clone;
+}
+
+/* Photo */
+.intro-photo{ flex:0 0 220px; display:flex; justify-content:center; }
+.intro-photo img{
+  width:220px; height:220px; border-radius:50%;
+  object-fit:cover; object-position:50% 20%;
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.intro-photo img:hover{
+  transform:scale(1.03);
+  box-shadow:0 12px 28px rgba(0,0,0,.25);
+}
+
+/* Responsive hero */
+@media (max-width:768px){
+  .intro-wrap{ flex-direction:column-reverse; text-align:center; gap:20px; }
+  .intro-text{ text-align:center; }
+  .intro-photo img{ width:180px; height:180px; }
+}
+
+/* ===== Work ===== */
+.work-section{ padding:48px 24px; }
+.project-card{ max-width:980px; margin:0 auto 56px; }
+.project-link{ display:block; text-decoration:none; color:inherit; }
+.project-media{
+  background:var(--card);
+  border-radius:20px; overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.10);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.project-media img{ display:block; width:100%; height:auto; }
+.project-link:hover .project-media{
+  transform:translateY(-4px);
+  box-shadow:0 14px 32px rgba(0,0,0,.16);
+}
+.project-text{ margin-top:18px; }
+.project-title{
+  font-family:"Raleway",sans-serif;
+  font-weight:700;
+  font-size:clamp(20px,3vw,28px);
+  color:var(--text); margin:0 0 8px 0;
+}
+.project-sub{
+  font-family:"Manrope",sans-serif;
+  color:var(--muted);
+  font-size:clamp(14px,2vw,18px);
+  line-height:1.6; margin:0;
+}
+.project-meta{
+  font-family:"Manrope",sans-serif;
+  color:var(--accent);
+  font-size:.95rem; margin-top:8px;
+}
+.project-media{ border-radius:18px; }
+@media (min-width:900px){ .project-media{ border-radius:22px; } }
+
+
+
+
+/* =========================
+   CONTACT PAGE
+   ========================= */
+.contact {
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  padding: clamp(120px, 15vh, 200px) clamp(40px, 8vw, 100px);
+}
+
+.contact-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 96px);
+  margin-bottom: 20px;
+}
+
+.contact-text {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* ===== Buttons ===== */
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.contact-btn i {
+  font-size: 1.2rem;
+}
+
+/* ===== Individual button colors ===== */
+.linkedin {
+  background: #0077b5;
+}
+.linkedin:hover {
+  background: #005b8a;
+}
+
+.email {
+  background: #ff8c94;
+}
+.email:hover {
+  background: #e06c76;
+}
+
+.discord {
+  background: #5865f2;
+}
+.discord:hover {
+  background: #4752c4;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+.about {
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(100px, 14vh, 180px) clamp(40px, 8vw, 120px);
+  font-family: "Manrope", sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 96px);
+  margin-bottom: 40px;
+}
+
+.about-text {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+.about-thanks {
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.about-emoji {
+  width: 33px;   
+  height: 33px;
+  vertical-align: middle;
+  transform: translateY(2px); 
+  border-radius: 10%;
+}

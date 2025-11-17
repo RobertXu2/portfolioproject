@@ -350,3 +350,182 @@ body{
   transform: translateY(2px); 
   border-radius: 10%;
 }
+
+
+/* =========================
+   UI Designs Section (Section 3)
+   ========================= */
+
+.ui-design-section {
+    padding: 72px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center; /* Center the heading, paragraph, and button */
+}
+
+.ui-design-section h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--text);
+    margin: 0 0 10px 0;
+}
+
+.ui-design-section p {
+    font-family: "Manrope", sans-serif;
+    color: var(--muted);
+    font-size: clamp(16px, 2vw, 20px);
+    margin-bottom: 30px; /* Space above the button wrapper */
+    line-height: 1.6;
+}
+
+/* Button Wrapper for spacing */
+.button-wrap {
+    margin-top: 20px;
+}
+
+/* Call-to-Action Button (styled similarly to contact buttons but unique) */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    
+    /* Unique Accent Colour for Dribbble/Design */
+    background: var(--accent);
+    color: var(--bg); /* Use the light background color as text for contrast */
+    border: 2px solid var(--accent); /* border for dark mode consistency */
+    
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button i {
+    font-size: 1.2rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background: color-mix(in srgb, var(--accent) 80%, var(--bg)); /* Slightly lighter/darker on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* For better contrast in dark mode, you might need a separate rule if the mix isn't right */
+}
+
+/* =========================
+   UI Designs Section (New Card Showcase Design)
+   ========================= */
+
+.ui-design-section {
+    padding: 72px 24px;
+    max-width: 1000px; /* Adjust max-width as needed for card layout */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ui-design-section h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--text);
+    margin: 0 0 10px 0;
+}
+
+.ui-design-section p {
+    font-family: "Manrope", sans-serif;
+    color: var(--muted);
+    font-size: clamp(16px, 2vw, 20px);
+    margin-bottom: 50px; 
+    line-height: 1.6;
+}
+
+/* Container for the showcase cards (to center them) */
+.ui-design-cards-container {
+    display: flex;
+    justify-content: center; /* Center the single card */
+    gap: 40px; /* Gap between cards if you add more later */
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    margin-bottom: 50px; /* Space before the optional "View More" button */
+}
+
+/* Individual Showcase Card */
+.ui-design-showcase-card {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 600px; /* Max width for a single card */
+    width: 100%;
+    text-align: left; /* Align text within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image/Media Area */
+.showcase-media {
+    width: 100%;
+    /* Optional: If you want a fixed height for images, use this and object-fit */
+    /* height: 350px; 
+    overflow: hidden; */
+}
+
+.showcase-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+/* Information/Text Area */
+.showcase-info {
+    padding: 25px 30px 30px; /* Padding inside the card for text */
+}
+
+.showcase-title {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    color: var(--text);
+    margin: 0 0 10px 0;
+}
+
+.showcase-description {
+    font-family: "Manrope", sans-serif;
+    color: var(--muted);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+}
+
+/* Button within the showcase card */
+.showcase-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    
+    background: var(--accent);
+    color: var(--bg);
+    border: 2px solid var(--accent);
+    
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showcase-button i {
+    font-size: 1.1rem;
+}
+
+.showcase-button:hover {
+    transform: translateY(-3px);
+    background: color-mix(in srgb, var(--accent) 80%, var(--bg));
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
